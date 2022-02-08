@@ -1,0 +1,7 @@
+{
+  "name": "imageMerger",
+  "integrations": {
+    "cordova": {}
+  },
+  "type": "angular"
+}

@@ -1,0 +1,35 @@
+.container {
+  margin: 10px;
+}
+
+.imgcontainer {
+  width: 100%;
+  height: 298px;
+  position: relative;
+
+  img.baseFrame {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    max-height: 100%;
+  }
+
+  img.cameraImage {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    max-height: 100%;
+  }
+}
+
+.canvascontainer {
+  width: 100%;
+  height: 398px;
+  position: relative;
+  img.cameraImage {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    max-height: 100%;
+  }
+}

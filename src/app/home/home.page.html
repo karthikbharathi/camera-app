@@ -1,0 +1,41 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>
+      Image
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <div class="container">
+    <ion-button (click)="clickCamera()" 
+    expand="block" fill="outline">Click Camera</ion-button>
+    <div class="imgcontainer">
+      <img class="cameraImage" src="{{imageCaptured}}"/>
+    </div>
+    <ion-list>
+
+      <ion-item *ngFor="let location of locationTraces">
+        <ion-label class="ion-text-wrap">
+          <ion-label>Time: {{location.timestamp | date:'M/d/yy, h:mm a'}}</ion-label>
+          <ion-label>Latitude: {{location.latitude}} Longitude: {{location.longitude}}</ion-label>
+          <ion-label>Accuracy: {{location.accuracy}}</ion-label>
+        </ion-label>
+      </ion-item>
+  
+    </ion-list>
+  
+    <div class="ion-text-center">
+  
+      <ng-container *ngIf="!locationWatchStarted; else elseTemplate">
+        <ion-button color="primary" (click)="getCoordinates()">Start Location</ion-button>
+      </ng-container>
+      <ng-template #elseTemplate>
+        Location Watch Started!
+      </ng-template>
+      </div>
+    <div class="canvascontainer">
+    <img class="cameraImage" src="{{newFinalImage}}"/>
+    </div>
+  </div>
+</ion-content>
